@@ -1,0 +1,7 @@
+    ,
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "packagerOpts": {
+      "assetExts": ["html","xml","md"]
+    }

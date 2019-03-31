@@ -3,6 +3,13 @@
     "name": "Autohome",
     "slug": "autohome",
     "sdkVersion": "32.0.0",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "ios": {
+      "bundleIdentifier": "com.headspin.autohome"
+    },
+    "android": {
+      "package": "com.headspin.autohome"
+    }
+
   }
 }
