@@ -1,0 +1,12 @@
+﻿{
+  "dependencies": {
+    "NLog": "4.6.1",
+    "NuGet.Build.Packaging": "0.2.2",
+    "System.ValueTuple": "4.5.0",
+    "NETStandard.Library": "1.6.0",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1"
+  },
+  "frameworks": {
+    "netstandard1.5": {}
+  }
+}

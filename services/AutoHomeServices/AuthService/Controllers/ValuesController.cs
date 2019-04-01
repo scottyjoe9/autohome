@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Logger;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoHome_Services.Controllers
@@ -10,10 +11,12 @@ namespace AutoHome_Services.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private static IClassLogger _logger = LogManager.GetClassLogger();
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            _logger.Trace(l => l("Getting Data: {value1}, {value2}", "value1", "value2"));
             return new string[] { "value1", "value2" };
         }
 
