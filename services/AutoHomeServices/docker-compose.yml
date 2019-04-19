@@ -2,7 +2,12 @@ version: '3.4'
 
 services:
   authservice:
-    image: ${DOCKER_REGISTRY-}authservice
+    image: scottyjoe9/authservice
     build:
-      context: .
-      dockerfile: AuthService/Dockerfile
+      context: ./AuthService/
+      dockerfile: Dockerfile.debug
+    ports:
+    - "8081:80"
+    volumes:
+    - ./AuthService/bin/Debug/netcoreapp2.1/:/app
+    container_name: AuthService
