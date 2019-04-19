@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+
+  identity.api:
+    image: identity.api
+    environment:
+      - RedisHost=user.data:6379
+    build:
+      context: .
+      dockerfile: Dockerfile.debug
+    ports:
+    - "80:80"
+    volumes:
+      - ./identity.api/bin/pub/:/app
+    container_name: identity.api
+    depends_on:
+      - user.data
+
+  user.data:
+    image: redis
