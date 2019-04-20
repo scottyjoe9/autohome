@@ -7,7 +7,7 @@
             "type":"shell",
             "label": "publish",
             "args": [
-                "${workspaceRoot}/services/services.sln", "-c", "Debug", "-o", "bin/pub"
+                "${workspaceRoot}/services.sln", "-c", "Debug", "-o", "bin/pub"
             ],
             "group": "build",
             "problemMatcher": "$msCompile"
