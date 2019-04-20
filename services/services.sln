@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pluginDefinitions", "plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lgTvPlugin", "pluginDefinitions\lgTvPlugin\lgTvPlugin.csproj", "{DFA8FD45-2279-419A-B615-8473A62E564B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\common\Logger\Logger.csproj", "{0D4AE8DC-C97F-4509-998E-447CB0557430}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", ".\common\Logger\Logger.csproj", "{0D4AE8DC-C97F-4509-998E-447CB0557430}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
