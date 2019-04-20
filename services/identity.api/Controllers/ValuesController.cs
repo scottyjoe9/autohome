@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Logger;
 
 namespace Identity.Api.Controllers
 {
@@ -7,10 +8,12 @@ namespace Identity.Api.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        internal IClassLogger Logger {get;}= LogManager.GetClassLogger();
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            Logger.Warning(a => a("GET RESULTS ARE IN BABY!"));
             return new string[] { "value1", "value2" };
         }
 
