@@ -6,6 +6,7 @@ services:
     image: identity.api
     environment:
       - RedisHost=user.data:6379
+      - AutoHomeLogFolder=${AutoHomeLogFolder}
     build:
       context: .
       dockerfile: Dockerfile.debug
@@ -13,6 +14,7 @@ services:
     - "80:80"
     volumes:
       - ./identity.api/bin/pub/:/app
+      - ${AutoHomeLogFolder}:${AutoHomeLogFolder}
     container_name: identity.api
     depends_on:
       - user.data

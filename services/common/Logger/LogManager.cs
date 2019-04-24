@@ -28,7 +28,7 @@ namespace Logger
         private static readonly string _appRoot = Path.GetDirectoryName(_entryAssembly.Location);
 
         private static readonly string _configFilePath = Path.Combine(_appRoot, NLogConfigFileName);
-        private static readonly string _logBaseDirectory = "/Users/Shared/AutoHome/Logs/";
+        private static readonly string _logBaseDirectory;
 
         public static Dictionary<string, ILogger> _loggers = new Dictionary<string, ILogger>();
         public static Dictionary<(ILogger logger, string LogType), IClassLogger> _classLoggers =
@@ -36,6 +36,14 @@ namespace Logger
 
         static LogManager()
         {
+            try{
+                _logBaseDirectory = Environment.GetEnvironmentVariable("AutoHomeLogFolder") ?? "/Users/Shared/AutoHome/Logs";
+            }
+            catch(Exception){
+                _logBaseDirectory = "/Users/Shared/AutoHome/Logs";
+            }
+
+
             if (!File.Exists(_configFilePath))
             {
                 using (var configFile = File.Create(_configFilePath))
@@ -73,6 +81,7 @@ namespace Logger
                     target.Add(new XAttribute("name", logName));
                     target.Add(new XAttribute(xsi + "type", "File"));
                     target.Add(new XAttribute("fileName", Path.Combine(_logBaseDirectory, $"{logName}.log")));
+                    target.Add(new XAttribute("layout","${date:format=O}|${logger}|${threadid}|${level:uppercase=true}|${message}"));
 
                     var targets = doc.Root.Element(ns + "targets");
 
@@ -132,7 +141,7 @@ namespace Logger
             var indexFirstPeriod = correctPortion.IndexOf('.');
 
             var classNameWithNamespace = correctPortion.Substring(
-                indexFirstPeriod + 1, 
+                indexFirstPeriod + 1,
                 correctPortion.LastIndexOf('.') - (indexFirstPeriod + 1))
                 .TrimEnd('.');
 
