@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Logger;
+using Microsoft.AspNetCore.Identity;
+using Identity.Api.Models;
 
 namespace Identity.Api.Controllers
 {
@@ -21,7 +23,8 @@ namespace Identity.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            Logger.Error(a => a("VALUE: {id}", id));
+            return $"value {id}";
         }
 
         // POST api/values
