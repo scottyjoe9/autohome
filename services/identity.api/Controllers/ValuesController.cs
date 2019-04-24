@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Logger;
 using Microsoft.AspNetCore.Identity;
-using Identity.Api.Models;
 
 namespace Identity.Api.Controllers
 {
