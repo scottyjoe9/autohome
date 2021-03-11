@@ -26,7 +26,7 @@
     "@ionic/angular": "^4.3.0",
     "@ionic/pro": "2.0.4",
     "core-js": "^2.5.4",
-    "electron": "^4.1.4",
+    "electron": "^9.4.0",
     "rxjs": "~6.3.3",
     "strongly-typed-events": "^1.4.10",
     "zone.js": "~0.8.29"
